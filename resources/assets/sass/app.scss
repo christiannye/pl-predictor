@@ -1,9 +1,10 @@
+//
+// Main compile file
+// --------------------------------------------------
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Our styles and overrides
+@import 'variables';
+@import 'layout';
 
-// Variables
-@import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap Files
+@import '../../../node_modules/bootstrap/scss/bootstrap';
