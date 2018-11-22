@@ -1,5 +1,42 @@
-// main: app.scss
+// main: stylesheet.scss
 
-body {
-    background: #000;
+@media (min-width: 1200px) {
+    .container {
+        max-width: 750px !important;
+    }
+}
+
+.fixture-list__fixture {
+    background: $brand-primary;
+    border-radius: 6px;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 17px;
+}
+
+.fixture-list__kickoff {
+    align-items: center;
+    background: darken($brand-primary, 5%);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    font-size: $font-size-base;
+    font-weight: 600;
+    justify-content: center;
+    padding: 5px 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.fixture-list__team-name {
+    font-weight: 600;
+}
+
+.fixture-list__vs {
+    align-self: center;
+    display: flex;
+    font-size: $font-size-lg;
+    justify-content: center;
 }

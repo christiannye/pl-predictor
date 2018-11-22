@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FixturesController@index');
+
+// Route::get('/', 'PageController@index')->name('welcome');
+//
+// Route::prefix('api')->group(function () {
+//    Route::get('/fixtures', 'FixturesController@index');
+//    Route::get('/results', 'ResultsController@index');
+// });

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FixturesController extends Controller
+class ResultsController extends Controller
 {
     public function index()
     {
@@ -13,8 +13,8 @@ class FixturesController extends Controller
 
         // return json_decode(file_get_contents($url), true);
 
-        $fixtures = json_decode(file_get_contents(base_path('storage/fixtures.json'), true));
+        $results = json_decode(file_get_contents(base_path('storage/results.json'), true));
 
-        return view('welcome', compact('fixtures'));
+        return view('welcome', compact('results'));
     }
 }

@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="resources/assets/css/app.css">
-        <link rel="stylesheet" href="resources/assets/css/reset.css">
+        <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}" type="text/css" >
+        <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>PL Predictor - @yield('title')</title>
+        <title>PL Predictor</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
