@@ -1,10 +1,5 @@
 // main: stylesheet.scss
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 750px !important;
-    }
-}
 
 .fixture-list__fixture {
     background: $brand-primary;
