@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Fixtures;
 use App\Results;
+use Zttp\Zttp;
 use Illuminate\Console\Command;
 
 class ImportData extends Command
@@ -37,6 +38,7 @@ class ImportData extends Command
      *
      * @return mixed
      */
+
     public function handle()
     {
         $this->info('Starting Fixture and Results import...');
