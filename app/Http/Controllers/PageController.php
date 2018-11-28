@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Zttp\Zttp;
 
 class PageController extends Controller
 {
@@ -16,12 +17,26 @@ class PageController extends Controller
 
     protected function getFixtures()
     {
-        return $fixtures = json_decode(file_get_contents(base_path('storage/fixtures.json'), true));
+        $url = 'https://sportdata.p.mashape.com/api/v1/free/soccer/matches/fixtures/premier-league';
+
+        $fixtures = Zttp::withHeaders([
+            "X-Mashape-Key" => "WxLtGy9Mx6msheZOC3IISAGlqUcDp1qkbudjsnpL91tbHWQTPF",
+            "Accept" => "application/json"
+        ])->get($url, []);
+
+        return $fixtures->json();
     }
 
     protected function getResults()
     {
-        return $results = json_decode(file_get_contents(base_path('storage/results.json'), true));
+        $url = 'https://sportdata.p.mashape.com/api/v1/free/soccer/matches/results/premier-league';
+
+        $results = Zttp::withHeaders([
+            "X-Mashape-Key" => "WxLtGy9Mx6msheZOC3IISAGlqUcDp1qkbudjsnpL91tbHWQTPF",
+            "Accept" => "application/json"
+        ])->get($url, []);
+
+        return $results->json();
     }
 
 }
