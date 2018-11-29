@@ -16,9 +16,9 @@ class CreateFixturesTable extends Migration
         Schema::create('fixtures', function (Blueprint $table) {
             $table->increments('id');
             $table->string('homeTeam');
-            $table->integer('homeGoals');
+            $table->integer('homeGoals')->unsigned();
             $table->string('awayTeam');
-            $table->integer('awayGoals');
+            $table->integer('awayGoals')->unsigned();
             $table->dateTime('dtime');
             $table->string('idd');
             $table->string('status');

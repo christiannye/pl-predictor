@@ -34,3 +34,27 @@
     font-size: $font-size-lg;
     justify-content: center;
 }
+
+.results-list__fixture {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.results-list__title {
+    font-size: $font-size-lg;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.results-list__final-score {
+    font-weight: 600;
+}
+
+.results-list__wrapper{
+    background: $gray-lighter;
+    border-radius: 6px;
+    padding: 15px 0;
+}

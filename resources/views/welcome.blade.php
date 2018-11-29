@@ -14,7 +14,7 @@
                         {{ $fixture['homeTeam'] }}
                     </span>
                     <div class="pl-badge-wrap">
-                        <div class="pl-badge pl-badge__{{ str_slug(strtolower($fixture['homeTeam'])) }}"></div>
+                        <img class="pl-badge" src="{{ url('/images/' . str_slug(strtolower($fixture['homeTeam'])) . '.png') }}"/>
                     </div>
                 </div>
                 <div class="fixture-list__vs col-2">vs</div>
@@ -23,16 +23,22 @@
                         {{ $fixture['awayTeam'] }}
                     </span>
                     <div class="pl-badge-wrap">
-                        <div class="pl-badge pl-badge__{{ str_slug(strtolower($fixture['awayTeam'])) }}"></div>
+                        <img class="pl-badge" src="{{ url('/images/' . str_slug(strtolower($fixture['awayTeam'])) . '.png') }}"/>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
     <div class="results-list col-12 col-sm-3">
-        <h3>Last week's results</h3>
-        @foreach($results as $result)
-            <p>{{ $result['homeTeam'] }} {{ $result['homeGoals'] }} - {{ $result['awayGoals'] }} {{ $result['awayTeam'] }}</p>
-        @endforeach
+        <div class="results-list__wrapper">
+            <h3 class="results-list__title">Previous Gameweek</h3>
+            @foreach($results as $result)
+                <div class="results-list__fixture">
+                    <img class="pl-badge pl-badge--small" src="{{ url('/images/' . str_slug(strtolower($result['homeTeam'])) . '.png') }}" data-toggle="tooltip" data-placement="top" title="{{ $result['homeTeam'] }}"/>
+                    <span class="results-list__final-score">{{ $result['homeGoals'] }} - {{ $result['awayGoals'] }}</span>
+                    <img class="pl-badge pl-badge--small" src="{{ url('/images/' . str_slug(strtolower($result['awayTeam'])) . '.png') }}" data-toggle="tooltip" data-placement="top" title="{{ $result['awayTeam'] }}"/>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

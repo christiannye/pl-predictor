@@ -13,88 +13,10 @@
 }
 
 .pl-badge {
-    background: url('/images/badges-sprite.png') no-repeat;
-    display: block;
     height: 50px;
-    width: 50px;
 }
 
-.pl-badge__arsenal {
-    background-position: 0px -100px;
-}
-
-.pl-badge__bournemouth {
-    background-position: -100px -250px;
-}
-
-.pl-badge__brighton {
-    background-position: -200px -200px;
-}
-
-.pl-badge__burnley {
-    background-position: -50px -300px;
-}
-
-.pl-badge__cardiff {
-    background-position: -150px -300px;
-}
-
-.pl-badge__chelsea {
-    background-position: -300px -300px;
-}
-
-.pl-badge__crystal-palace {
-    background-position: -100px -350px;
-}
-
-.pl-badge__everton {
-    background-position: 0 -400px;
-}
-
-.pl-badge__fulham {
-    background-position: -450px -200px;
-}
-
-.pl-badge__huddersfield {
-    background-position: -150px -450px;
-}
-
-.pl-badge__leicester {
-    background-position: -500px -250px;
-}
-
-.pl-badge__liverpool {
-    background-position: -500px -450px;
-}
-
-.pl-badge__manchester-city {
-    background-position: -500px -500px;
-}
-
-.pl-badge__manchester-united {
-    background-position: -550px -400px;
-}
-
-.pl-badge__newcastle {
-    background-position: -550px -500px;
-}
-
-.pl-badge__southampton {
-    background-position: -650px -500px;
-}
-
-.pl-badge__tottenham {
-    background-position: -500px -650px;
-}
-
-.pl-badge__watford {
-background-position: -700px -50px;
-}
-
-.pl-badge__west-ham{
-    background-position: -700px -150px;
-}
-
-.pl-badge__wolves {
-    background-position: -700px -400px;
+.pl-badge--small {
+    height: 30px;
+    margin: 0 15px;
 }

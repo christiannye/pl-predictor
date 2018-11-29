@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Zttp\Zttp;
+use App\Fixtures;
 
 class PageController extends Controller
 {
@@ -11,6 +13,8 @@ class PageController extends Controller
     {
         $fixtures = $this->getFixtures();
         $results  = $this->getResults();
+
+        // $fixturestwo = Fixtures::all();
 
         return view('welcome', compact('fixtures', 'results'));
     }
