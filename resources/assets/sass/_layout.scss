@@ -1,60 +1,101 @@
 // main: stylesheet.scss
 
-.fixture-list__fixture {
-    background: $brand-primary;
-    border-radius: 6px;
-    display: flex;
-    height: 200px;
-    justify-content: center;
-    margin-bottom: 20px;
-    padding-bottom: 17px;
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1050px !important;
+    }
 }
 
-.fixture-list__kickoff {
+.main-title {
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-size: $font-size-h4;
+    margin-bottom: 15px;
+}
+
+.styled-title {
     align-items: center;
-    background: darken($brand-primary, 5%);
     border-radius: 5px 5px 0 0;
     display: flex;
     font-size: $font-size-base;
     font-weight: 600;
+    height: 50px;
     justify-content: center;
-    padding: 5px 0;
     margin-bottom: 15px;
     text-transform: uppercase;
     width: 100%;
+}
+
+.fixture-list__fixture {
+    background: $brand-primary;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.fixture-list__kickoff {
+    background: darken($brand-primary, 10%);
+    margin-bottom: 25px;
 }
 
 .fixture-list__team-name {
     font-weight: 600;
 }
 
-.fixture-list__vs {
-    align-self: center;
+.fixture-list__bottom {
+    background: darken($brand-primary, 5%);
+    border-radius: 0 0 6px 6px;
+    margin-top: 25px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.fixture-list__prediction {
+    align-self: flex-start;
     display: flex;
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
+    font-weight: 600;
     justify-content: center;
+    text-transform: uppercase;
 }
 
 .results-list__fixture {
     align-items: center;
+    border-bottom: 1px solid darken($brand-primary, 10%);
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .results-list__title {
-    font-size: $font-size-lg;
-    font-weight: bold;
-    margin-bottom: 25px;
-    text-align: center;
+    background: darken($gray-lighter, 5%);
+    margin-bottom: 0;
 }
 
 .results-list__final-score {
+    background: #e3393f;
+    color: $white;
+    font-size: $font-size-sm;
     font-weight: 600;
+    letter-spacing: 1px;
+    padding: 2px 5px;
 }
 
-.results-list__wrapper{
+.results-list__wrapper {
     background: $gray-lighter;
+    padding: 15px;
+}
+
+.fixture-list__round-small {
+    background: darken($brand-primary, 15%);
     border-radius: 6px;
-    padding: 15px 0;
+    display: inline;
+    font-size: $font-size-lg;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 10px 20px;
 }

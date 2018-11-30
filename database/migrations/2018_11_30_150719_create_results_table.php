@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFixturesTable extends Migration
+class CreateResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFixturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('fixtures', function (Blueprint $table) {
+        Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
             $table->string('homeTeam');
             $table->integer('homeGoals');
@@ -35,6 +35,6 @@ class CreateFixturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fixtures');
+        Schema::dropIfExists('results');
     }
 }

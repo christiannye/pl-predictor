@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Fixture;
+use App\Result;
 use Zttp\Zttp;
-use App\Fixtures;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -13,8 +16,16 @@ class PageController extends Controller
     {
         $fixtures = $this->getFixtures();
         $results  = $this->getResults();
+        $gameweekStart  = Carbon::now()->subDay()->previous(Carbon::FRIDAY)->toDateString();
+        $gameweekEnd    = Carbon::now()->subDay()->startOfWeek(Carbon::MONDAY)->toDateString();
 
-        // $fixturestwo = Fixtures::all();
+
+        $test = Result::where('dtime', '>=', $gameweekStart)
+                     ->where('dtime', '<=', $gameweekEnd)->get();
+
+        // return $test;
+
+        // return "{$gameweekStart} - {$gameweekEnd}";
 
         return view('welcome', compact('fixtures', 'results'));
     }
