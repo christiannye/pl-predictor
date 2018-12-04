@@ -28,36 +28,63 @@
     width: 100%;
 }
 
-.fixture-list__fixture {
-    background: $brand-primary;
+.gameweek-list__fixture {
+    background: #ace7b7;
     border-radius: 6px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.fixture-list__kickoff {
-    background: darken($brand-primary, 10%);
+.gameweek-list-list__fixture--default {
+    background: $brand-primary;
+}
+
+.gameweek-list__kickoff {
+    background: darken(#ace7b7, 10%);
     margin-bottom: 25px;
 }
 
-.fixture-list__team-name {
+.gameweek-list__kickoff--default {
+    background: darken($brand-primary, 10%);
+}
+
+.gameweek-list__team-name {
     font-weight: 600;
 }
 
-.fixture-list__bottom {
-    background: darken($brand-primary, 5%);
+.gameweek-list__bottom {
+    background: darken(#ace7b7, 5%);
     border-radius: 0 0 6px 6px;
     margin-top: 25px;
     padding: 20px 0;
     width: 100%;
 }
 
-.fixture-list__prediction {
-    align-self: flex-start;
+.gameweek-list__bottom--default {
+    background: darken($brand-primary, 5%);
+}
+
+.gameweek-list__round-small {
+    background: darken(#ace7b7, 15%);
+    border-radius: 6px;
+    display: inline;
+    font-size: $font-size-lg;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 10px 20px;
+}
+
+.gameweek-list__round-small--default {
+    background: darken($brand-primary, 15%);
+}
+
+.gameweek-list__prediction {
+    align-self: center;
     display: flex;
     font-size: $font-size-base;
     font-weight: 600;
+    flex-direction: column;
     justify-content: center;
     text-transform: uppercase;
 }
@@ -69,6 +96,12 @@
     justify-content: center;
     margin-bottom: 10px;
     padding-bottom: 10px;
+
+    &:last-child {
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 }
 
 .results-list__title {
@@ -90,12 +123,22 @@
     padding: 15px;
 }
 
-.fixture-list__round-small {
-    background: darken($brand-primary, 15%);
-    border-radius: 6px;
-    display: inline;
-    font-size: $font-size-lg;
-    font-weight: bold;
-    margin-left: 5px;
-    padding: 10px 20px;
+.your-prediction {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rectangle-bk {
+    align-self: center;
+    background: $black;
+    display: flex;
+    height: 5px;
+    margin: 0 15px;
+    width: 25px;
+}
+
+.score {
+    display: flex;
+    margin: 0 auto;
+    width: 130px;
 }

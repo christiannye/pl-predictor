@@ -14,39 +14,41 @@ class PageController extends Controller
 {
     public function index()
     {
-        $fixtures = $this->getFixtures();
-        $results  = $this->getResults();
-        $gameweekStart  = Carbon::now()->subDay()->previous(Carbon::FRIDAY)->toDateString();
-        $gameweekEnd    = Carbon::now()->subDay()->startOfWeek(Carbon::MONDAY)->toDateString();
+        $fixtures         = $this->getFixtures();
+        $results          = $this->getResults();
+        $currentGwResults = $this->getCurrentGwResults();
 
-
-        $test = Result::where('dtime', '>=', $gameweekStart)
-                     ->where('dtime', '<=', $gameweekEnd)->get();
-
-        // return $test;
-
-        // return "{$gameweekStart} - {$gameweekEnd}";
-
-        return view('welcome', compact('fixtures', 'results'));
+        return view('welcome', compact('fixtures', 'results', 'currentGwResults'));
     }
 
     protected function getFixtures() {
-        return $this->getData('fixtures');
+        return $this->betweenDates(
+            now()->startOfDay()->previousWeekday(Carbon::FRIDAY)->toDateString(),
+            now()->startOfDay()->next(Carbon::THURSDAY)->toDateString(),
+            'Fixture'
+        );
     }
 
     protected function getResults() {
-        return $this->getData('results');
+        return $this->betweenDates(
+            now()->startOfDay()->subDays(7)->previous(Carbon::FRIDAY)->toDateString(),
+            now()->startOfDay()->subDays(7)->startOfWeek()->toDateString()
+        );
     }
 
-    protected function getData($type) {
-        $url = 'https://sportdata.p.mashape.com/api/v1/free/soccer/matches/'.$type.'/premier-league';
-
-        $data = Zttp::withHeaders([
-            "X-Mashape-Key" => "WxLtGy9Mx6msheZOC3IISAGlqUcDp1qkbudjsnpL91tbHWQTPF",
-            "Accept" => "application/json"
-        ])->get($url, []);
-
-        return $data->json();
+    protected function getCurrentGwResults() {
+        return $this->betweenDates(
+            now()->startOfDay()->subDay()->previous(Carbon::FRIDAY)->toDateString(),
+            now()->startOfDay()->startOfWeek()->toDateString()
+        );
     }
 
+    protected function betweenDates($gws, $gwe, $model = 'Result')
+    {
+        $model = "\App\\" . $model;
+        return (new $model)
+            ->whereBetween('dtime', [$gws, $gwe])
+            ->get()
+            ->sortBy('dtime');
+    }
 }
