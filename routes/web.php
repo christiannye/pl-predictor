@@ -12,3 +12,13 @@
 */
 
 Route::get('/', 'PageController@index');
+
+// Register Page
+Route::get('/register', 'RegistrationController@create');
+Route::post('register', 'RegistrationController@store');
+
+
+// Login Page
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', [ 'as' => 'login', 'uses' => 'SessionsController@store']);
+Route::get('/logout', 'SessionsController@destroy');
