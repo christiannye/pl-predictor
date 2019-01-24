@@ -1,0 +1,19 @@
+// main: stylesheet.scss
+
+.homepage__btn {
+    background-color: $white;
+    border: 0;
+    border-radius: 50px;
+    color: $black;
+    font-family: 'Cairo';
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.homepage__btn--inverse {
+    background: none;
+    border: 1px solid $white;
+    color: $white;
+}

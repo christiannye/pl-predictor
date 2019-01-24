@@ -12,13 +12,19 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+
     public function index()
+    {
+        return view('welcome', compact('welcome'));
+    }
+
+    public function predictions()
     {
         $fixtures         = $this->getFixtures();
         $results          = $this->getResults();
         $currentGwResults = $this->getCurrentGwResults();
 
-        return view('welcome', compact('fixtures', 'results', 'currentGwResults'));
+        return view('predictions', compact('fixtures', 'results', 'currentGwResults'));
     }
 
     protected function getFixtures() {

@@ -11,7 +11,21 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+// Home
+Route::get('/', 'PageController@index')->name('welcome');
+
+// Main Prediction Area
+Route::get('/predictions', 'PageController@predictions')->name('predictions');
+
+// Website initial load
+Route::get('/predictions', function () {
+    if(Auth::check()) {
+        return redirect()->route('predictions');
+    }
+
+    return view('welcome');
+})->name('welcome');
+
 
 // Register Page
 Route::get('/register', 'RegistrationController@create');

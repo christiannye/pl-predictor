@@ -10,6 +10,6 @@
         <title>PL Predictor</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700|Raleway:300,400,500,600,700" rel="stylesheet"> 
     </head>
 <body>
