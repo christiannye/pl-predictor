@@ -14,18 +14,16 @@
 // Home
 Route::get('/', 'PageController@index')->name('welcome');
 
-// Main Prediction Area
-Route::get('/predictions', 'PageController@predictions')->name('predictions');
-
-// Website initial load
-Route::get('/predictions', function () {
+// If already logged in - redirect to predictions
+Route::get('/', function () {
     if(Auth::check()) {
         return redirect()->route('predictions');
     }
-
     return view('welcome');
 })->name('welcome');
 
+// Main Prediction Area
+Route::get('/predictions', 'PageController@predictions')->name('predictions');
 
 // Register Page
 Route::get('/register', 'RegistrationController@create');

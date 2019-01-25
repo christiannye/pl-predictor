@@ -154,20 +154,52 @@
 
 .homepage__welcome-area {
     align-self: center;
-    background: rgba(#c0c0c0, .35);
+    background: rgba(#505050, .6);
     border-radius: 3px;
     box-shadow: 0 0 9px 0 rgba($black, .7);
     color: $black;
     margin: 0 auto;
     padding: 35px;
     text-align: center;
-    width: 430px;
+    width: 440px;
 }
 
 .homepage__subtitle {
+    color: $white;
     font-family: 'Cairo';
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 600;
     margin-bottom: 40px;
+    padding-bottom: 25px;
+    position: relative;
     text-transform: uppercase;
+
+    &::after {
+        background: $white;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 50%;
+    }
+}
+
+.logo {
+    margin-bottom: 30px;
+
+    span {
+        color: $black;
+        font-size: 12px;
+    }
+}
+
+.logo-circle {
+    background: $brand-primary;
+    border-radius: 50%;
+    height: 70px;
+    margin: 0 auto 10px;
+    padding-top: 15px;
+    width: 70px;
 }
